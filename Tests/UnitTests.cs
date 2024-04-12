@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using NUnit.Framework;
 
 namespace GithubActionsLab
@@ -31,5 +31,76 @@ namespace GithubActionsLab
         }
 
         // Implement 3 tests per operation, following a similar pattern as above
+        [Test]
+        public void Subtract_Valid()
+        {
+            Assert.AreEqual(5, Program.Subtract("5", "1"));
+        }
+
+        [Test]
+        public void Subtract_Invalid()
+        {
+            Assert.Throws<FormatException>(() => Program.Subtract("1", "a"));
+        }
+
+        [Test]
+        public void Subtract_Null()
+        {
+            Assert.Throws<FormatException>(() => Program.Subtract("1", null));
+        }
+
+        [Test]
+        public void Multiply_Valid()
+        {
+            Assert.AreEqual(4, Program.Multiply("2", "2"));
+        }
+
+        [Test]
+        public void Multiply_Invalid()
+        {
+            Assert.Throws<FormatException>(() => Program.Multiply("1", "a"));
+        }
+
+        [Test]
+        public void Multiply_Null()
+        {
+            Assert.Throws<FormatException>(() => Program.Multiply("1", null));
+        }
+
+        [Test]
+        public void Divide_Valid()
+        {
+            Assert.AreEqual(4, Program.Divide("8", "2"));
+        }
+
+        [Test]
+        public void Divide_Invalid()
+        {
+            Assert.Throws<FormatException>(() => Program.Divide("1", "a"));
+        }
+
+        [Test]
+        public void Divide_Null()
+        {
+            Assert.Throws<FormatException>(() => Program.Divide("1", null));
+        }
+
+        [Test]
+        public void Power_Valid()
+        {
+            Assert.AreEqual(2, Program.Power("2", "1"));
+        }
+
+        [Test]
+        public void Power_Invalid()
+        {
+            Assert.Throws<FormatException>(() => Program.Power("1", "a"));
+        }
+
+        [Test]
+        public void Power_Null()
+        {
+            Assert.Throws<FormatException>(() => Program.Power("1", null));
+        }
     }
 }
